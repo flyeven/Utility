@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Nodes id="Email">
+
+  <!--创建节点，通过ID区分不同的节点-->
+  <node id="templateName">
+    <![CDATA[
+<html>
+<head>
+    <title></title>
+    <style>
+        body {
+            font-family: 'Microsoft YaHei';
+            font-size: 14px;
+        }
+
+        b.title {
+            color: black;
+        }
+
+        table {
+            width: 800px;
+            border-collapse: collapse;
+            margin-top: 8px;
+        }
+
+        .font-weight-bold {
+            font-weight: bold;
+        }
+
+        td.subtitle {
+            background-color: #b8cce4;
+            width: 100%;
+            font-weight: bold;
+        }
+
+        td {
+            text-align: left;
+            height: 28px;
+            padding-left: 2px;
+            padding-right: 2px;
+            vertical-align: middle;
+        }
+
+        .percent-width-16-67 {
+            width: 16.66666667%;
+        }
+    </style>
+</head>
+<body>
+    <b>尊敬的<<username>>，</b>
+    <br />
+    <b>您好！</b>
+    <br /><br />
+    <b class="title">如下是您截至 <<deadline>> BPM系统工作流程概况：</b>
+    <br />
+    <table border="1">
+        <tbody>
+            <tr>
+                <td colspan="6" class="subtitle">个人信息：
+                </td>
+            </tr>
+            <tr>
+                <td class="font-weight-bold percent-width-16-67">姓名：</td>
+                <td class="percent-width-16-67"><<username>></td>
+                <td class="font-weight-bold percent-width-16-67">职位：</td>
+                <td class="percent-width-16-67"><<position>></td>
+                <td class="font-weight-bold percent-width-16-67">所属部门：</td>
+                <td class="percent-width-16-67"><<department>></td>
+            </tr>
+            <tr>
+                <td colspan="6" class="subtitle">已发工作流程：
+                </td>
+            </tr>
+            <tr>
+                <td colspan="3" class="font-weight-bold">已发待审批：
+                </td>
+                <td colspan="3"><<submittedopentasks>> 条
+                </td>
+            </tr>
+            <tr>
+                <td colspan="3" class="font-weight-bold">已发待进一步处理（被拒绝&被退回）：
+                </td>
+                <td colspan="3"><<submittedrejecttasks>> 条
+                </td>
+            </tr>
+            <tr>
+                <td colspan="6" class="subtitle">未审批&未审阅工作流程：
+                </td>
+            </tr>
+            <tr>
+                <td colspan="3" class="font-weight-bold">待处理：
+                </td>
+                <td colspan="3"><<opentasks>> 条
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <br />
+    <br />
+    <b>感谢您使用英皇娱艺OA系统<a target="_blank" href="https://boa.emperorgroup.net">https://boa.emperorgroup.net</a>！本邮件由系统自动发出，请勿回复。</b>
+</body>
+</html>
+    ]]>
+  </node>
+
+</Nodes>

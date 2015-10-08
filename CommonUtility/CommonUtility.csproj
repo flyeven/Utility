@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{9EF6184A-443E-48E8-BE8F-8381B59F9952}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Utility.CommonUtility</RootNamespace>
+    <AssemblyName>Utility.CommonUtility</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Web.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CryptoService\DECCryptography.cs" />
+    <Compile Include="CryptoService\MD5Cryptography.cs" />
+    <Compile Include="Database\DBHelper.cs" />
+    <Compile Include="Database\DBTransaction.cs" />
+    <Compile Include="Database\Helpers\OleDBHelper.cs" />
+    <Compile Include="Database\Helpers\MSSQLHelper.cs" />
+    <Compile Include="Database\Mirabeau.Sql.Library\DatabaseHelper.cs" />
+    <Compile Include="Database\Mirabeau.Sql.Library\DbDataReaderHelper.cs" />
+    <Compile Include="Database\Mirabeau.Sql.Library\GlobalSuppressions.cs" />
+    <Compile Include="Database\Mirabeau.Sql.Library\SqlHelperParameterCache.cs" />
+    <Compile Include="Database\Mirabeau.Sql.Library\SqlParameterExtensions.cs" />
+    <Compile Include="Database\Mirabeau.Sql.Library\String.Resources.Designer.cs" />
+    <Compile Include="Database\StoredProcedure\DBHandler.cs" />
+    <Compile Include="Database\StoredProcedure\MSSQLHandler.cs" />
+    <Compile Include="Database\StoredProcedure\Object2SQLParameter.cs" />
+    <Compile Include="Extension\ConfigurationManagerExtension.cs" />
+    <Compile Include="Extension\IPAddressExtension.cs" />
+    <Compile Include="Extension\ObjectCopyExtension.cs" />
+    <Compile Include="Extension\DataTableExtension.cs" />
+    <Compile Include="Extension\EnumExtension.cs" />
+    <Compile Include="Mail\MailSender.cs" />
+    <Compile Include="Mail\MailHelper.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SimpleSoundPlayer\SimpleSoundPlayer.cs" />
+    <Compile Include="SystemInfo\CpuUsage.cs" />
+    <Compile Include="SystemInfo\MemoryInfo.cs" />
+    <Compile Include="SystemOption\CursorControl.cs" />
+    <Compile Include="SystemOption\MessageBoxControl.cs" />
+    <Compile Include="SystemOption\MouseControl.cs" />
+    <Compile Include="XmlExtension\ClassSerializer.cs" />
+    <Compile Include="XmlExtension\XMLProvider.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Database\StoredProcedure\_ReadMe.txt" />
+    <Content Include="Database\_ReadMe.txt" />
+    <Content Include="SystemOption\ReadMe.txt" />
+    <Content Include="XmlExtension\Demo.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Database\Mirabeau.Sql.Library\String.Resources.resx" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

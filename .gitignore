@@ -1,0 +1,9 @@
+CommonUtility/bin/Debug/Newtonsoft.Json.dll
+CommonUtility/bin/Debug/System.Net.Http.Formatting.dll
+CommonUtility/bin/Debug/System.Net.Http.Formatting.xml
+CommonUtility/bin/Debug/System.Web.Http.dll
+CommonUtility/bin/Debug/System.Web.Http.xml
+CommonUtility/bin/Debug/Utility.CommonUtility.dll
+*.pdb
+CommonUtility/bin/Debug/zh-Hans/System.Net.Http.Formatting.resources.dll
+CommonUtility/bin/Debug/zh-Hans/System.Web.Http.resources.dll
