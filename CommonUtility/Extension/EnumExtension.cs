@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -13,18 +14,37 @@ namespace Utility.CommonUtility.Extension
     public class EnumExtension
     {
         /// <summary>
-        /// 获取枚举类型的Description特性（Attribute）
+        /// Get Enum Description
         /// </summary>
-        /// <param name="value">枚举值</param>
-        /// <returns>Description特性</returns>
-        public static string GetDescription(Enum value)
+        /// <param name="value">Enum Value</param>
+        /// <returns>Enum Description</returns>
+        /// <from>http://stackoverflow.com/questions/9126228/how-to-set-string-in-enum-c</from>
+        public static string GetEnumDescription(Enum value)
         {
-            var attributes = (DescriptionAttribute[])value.GetType()
-                .GetField(value.ToString())
-                .GetCustomAttributes(typeof(DescriptionAttribute), false);
+            FieldInfo fi = value.GetType().GetField(value.ToString());
 
-            //如果当前枚举值不存在Description，则返回当前值（ToString）
-            return attributes != null && attributes.Length > 0 ? attributes[0].Description : value.ToString();
+            DescriptionAttribute[] attributes =
+                (DescriptionAttribute[])fi.GetCustomAttributes(
+                typeof(DescriptionAttribute),
+                false);
+
+            if (attributes != null &&
+                attributes.Length > 0)
+                return attributes[0].Description;
+            else
+                return value.ToString();
+        }
+
+        /// <summary>
+        /// Convert a string to an enumeration value
+        /// </summary>
+        /// <typeparam name="T">enum type</typeparam>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        /// <from>http://stackoverflow.com/questions/16100/how-do-i-convert-a-string-to-an-enum-in-c</from>
+        public static T ParseEnum<T>(string value)
+        {
+            return (T)Enum.Parse(typeof(T), value, true);
         }
     }
 }
